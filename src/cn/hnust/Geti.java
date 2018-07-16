@@ -28,7 +28,8 @@ public class Geti extends HttpServlet {
 			throws ServletException, IOException {
 		
 		response.setContentType("text/plain;charset=utf-8");
-		
+		////////////////////////////////////////////
+		////////////////////////////
 		try {
 			////////////
 			// do something
