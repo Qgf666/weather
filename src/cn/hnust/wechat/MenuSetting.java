@@ -22,7 +22,7 @@ public class MenuSetting {
         JSONObject json = new JSONObject(result);
         return  json.getString("access_token");
     }
-    
+    ////////////////////
     public static void delete() throws JSONException{
     		String s = getAccessToken();
         NetWorkHelper netHelper = new NetWorkHelper();
@@ -51,7 +51,7 @@ public class MenuSetting {
         		+ "{"	
                 + "\"type\":\"view\","
                 + "\"name\":\"∏ˆ»À≈≈√˚\","
-                + "\"url\":\"http://www.hnust.cn\""
+                + "\"url\":\"http://gt2iek.natappfree.cc/weather/weather.html\""
              	+ "},"
              	 + "{"
                  + "\"type\":\"view\","
