@@ -72,6 +72,8 @@ public class Geti extends HttpServlet {
 					if(ques[k] == randnumber)
 						break;
 						k++;
+						////
+						///
 				}
 				if(k == 4){ 
 					ques[j] = randnumber;
