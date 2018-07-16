@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>JAVA答题</title>
+    <script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #div-btn{
+           text-align: center;
+        }
+        #btn-ans{
+            text-align: center;
+            width: 150px;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+        	
+        	$.get("/weather/Geti",function(data,status){
+        		
+        		var o = eval("(" + data + ")");
+        		var q1 = o.question1;
+        		var q2 = o.question2;
+        		var q3 = o.question3;
+        		var q4 = o.question4;
+        	
+        	    /////////////
+        	    var standard="CCCC";
+        	    $("#t1").text(q1.question);
+        		$("#a11").html(q1.opt_one);
+        		$("#a12").html(q1.opt_two);
+        		$("#a13").html(q1.opt_three);
+        		$("#a14").html(q1.opt_four);
+        		
+        		$("#t2").text(q2.question);
+        		$("#a21").html(q2.opt_one);
+        		$("#a22").html(q2.opt_two);
+        		$("#a23").html(q2.opt_three);
+        		$("#a24").html(q2.opt_four);
+        		
+        		$("#t3").text(q3.question);
+        		$("#a31").html(q3.opt_one);
+        		$("#a32").html(q3.opt_two);
+        		$("#a33").html(q3.opt_three);
+        		$("#a34").html(q3.opt_four);
+        		
+        		$("#t4").text(q4.question);
+        		$("#a41").html(q4.opt_one);
+        		$("#a42").html(q4.opt_two);
+        		$("#a43").html(q4.opt_three);
+        		$("#a44").html(q4.opt_four);
+        		//////////////
+        		
+        	    $("#btn-ans").click(function(){
+        	    	var t = 0;
+        	    	var s_one = $("input[name=radiobutton1]:checked");
+        	    	var s_two = $("input[name=radiobutton2]:checked");
+        	    	var s_three = $("input[name=radiobutton3]:checked");
+        	    	var s_four = $("input[name=radiobutton4]:checked");
+        			var s1 = s_one.val();
+        			var s2 = s_two.val();
+        			var s3 = s_three.val();
+        			var s4 = s_four.val();
+        			if(s_one.size() == 0 || s_two.size() == 0 || s_three.size() == 0 || s_four.size() == 0) alert("题目还没有作答完毕");
+        			
+        			else{
+        				if(s1 == q1.anwser) t += 25;
+        				if(s2 == q2.anwser) t += 25;
+        				if(s3 == q3.anwser) t += 25;
+        				if(s4 == q4.anwser) t += 25;
+                		alert("已交卷\n我的作答是:" + s1 + " " + s2 + " " + s3 + " " + s4 + "\n我的得分是: " + t +"\n请点击【刷新】继续答题");
+            		}
+            });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+<h3 align="center">第一题</h3>
+<p id="t1">  </p>
+    <input type="radio" name="radiobutton1" value="A" ><span id="a11">   </span><br>
+    <input type="radio" name="radiobutton1" value="B" ><span id="a12">  </span><br>
+    <input type="radio" name="radiobutton1" value="C" ><span id="a13">  </span><br>
+    <input type="radio" name="radiobutton1" value="D" ><span id="a14">  </span><br>
+<h3 align="center">第二题</h3>
+<p id="t2"></p>
+    <input type="radio" name="radiobutton2" value="A"><span id="a21"></span><br>
+    <input type="radio" name="radiobutton2" value="B"><span id="a22"></span><br>
+    <input type="radio" name="radiobutton2" value="C"><span id="a23"></span><br>
+    <input type="radio" name="radiobutton2" value="D"><span id="a24"></span><br>
+<h3 align="center">第三题</h3>
+<p id="t3"></p>
+    <input type="radio" name="radiobutton3" value="A"><span id="a31"></span><br>
+    <input type="radio" name="radiobutton3" value="B"><span id="a32"></span><br>
+    <input type="radio" name="radiobutton3" value="C"><span id="a33"></span><br>
+    <input type="radio" name="radiobutton3" value="D"><span id="a34"></span><br>
+<h3 align="center">第四题</h3>
+<p id="t4"></p>
+    <input type="radio" name="radiobutton4" value="A"><span id="a41"></span><br>
+    <input type="radio" name="radiobutton4" value="B"><span id="a42"></span><br>
+    <input type="radio" name="radiobutton4" value="C"><span id="a43"></span><br>
+    <input type="radio" name="radiobutton4" value="D"><span id="a44"></span><br>
+          
+    <br>
+    <div id="div-btn">
+    <button id="btn-ans" type="button" class="btn btn-success">提 交</button>
+    </div>
+    <br>
+    <br>
+</div>
+</body>
+</html>
