@@ -42,7 +42,7 @@ public class MenuSetting {
         		+ "{"	
                 + "\"type\":\"view\","
                 + "\"name\":\"¿ªÊ¼´ðÌâ\","
-                + "\"url\":\"http://qxzzba.natappfree.cc/weather/qa.html\""
+                + "\"url\":\"http://gt2iek.natappfree.cc/weather/qa.html\""
                 + "}]"
         		+ "},"
         		+ "{"
